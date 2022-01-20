@@ -1,0 +1,29 @@
+---
+- name: GATHER INFORMATION
+  hosts: CSR1kv
+  gather_facts : false
+  connection: local
+  
+  tasks:
+   - name: VERSION NUMBER
+     ios_command:
+       commands: 
+        - sh ver
+     register: version
+
+   - name: SHOW INTERFACES
+     ios_command:
+       commands:
+        - sh ip int br
+     register: interfaces
+
+   - name: CLEAR COUNTERS
+     ios_command:
+       commands:
+        - command: 'enable'
+          prompt: '#'
+          answer: "\r"
+        - command: 'clear counters'
+          prompt: '[confirm]'
+          answer: "\r"           
+     register: counters
