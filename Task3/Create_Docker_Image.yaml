@@ -1,0 +1,57 @@
+---
+- hosts: webservers
+  become: yes
+  tasks:
+  - name: INSTALL DOCKER
+    expect:
+      command: apt-get install docker
+      responses:
+        'Do you want to continue? [Y/n]' : 'Y'
+
+  - name: INSTALL FLASK
+    command: pip3 install flask
+
+  - name: DELETE MYAPPDIR
+    file:
+      state: absent
+      path: /home/myapp
+
+
+  - name: MAKE MYAPPDIR
+    file:
+      state: directory
+      path: /home/myapp
+
+  - name: COPY SAMPLEAPP.PY
+    copy:
+      src: /home/devasc/labs/devnet-src/sample-app/sample_app.py
+      dest: /home/myapp/sample_app.py
+
+  - name: MAKE STATICDIR
+    file:
+      state: directory
+      path: /home/myapp/static
+
+  - name: COPY STATIC-DIR
+    copy:
+      src: /home/devasc/labs/devnet-src/sample-app/static/
+      dest: /home/myapp/static/
+
+  - name: MAKE TEMPLATESDIR
+    file:
+      state: directory
+      path: /home/myapp/templates
+
+  - name: COPY TEMPLATE-DIR
+    copy:
+      src: /home/devasc/labs/devnet-src/sample-app/templates/
+      dest: /home/myapptemplates/
+
+  - name: COPY DOCKERFILE
+    copy:
+      src: /home/devasc/labs/devnet-src/Devasc_Skills/Task3/Dockerfile
+      dest: /home/myapp/Dockerfile
+
+  - name: BUILD DOCKER IMAGE
+    command: docker build -f /home/myapp/Dockerfile -t sampleimage .
+

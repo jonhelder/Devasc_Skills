@@ -18,3 +18,11 @@ Only when I reduce the required RAM of te DEVASC-VM to 2GB and the CRS1000 to 3G
 I has some troubel in the ansible scrip to react on a response, but was able to fix that
 Task verification: see Task2.png
 
+Task3: Docker
+Taskpreparation: Run only the DEVASC-LABVM, create the Task3 directory.
+Task implemenation: created the hosts, ansible.cfg and Dockerfile.
+                    created the Create_Docker_Image.yaml                    
+Task trouble: At start I didnt unsderstoot I had the creat the dockerfile instead od creating it on the run
+names of docker images cann't be any capital letter.
+TaskVerivcation: se Task3/pgn. before the paybook, there is no Sampleimage image and afthe the playbook there is.
+
