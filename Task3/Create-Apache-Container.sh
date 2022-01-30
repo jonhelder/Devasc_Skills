@@ -1,6 +1,6 @@
 #!/bin/basc
 docker stop apache-container
-docker rm apacher-container
+docker rm apache-container
 docker rmi apache-image
 echo "FROM python" > Dockerfile
 echo "RUN apt-get update" >> Dockerfile
