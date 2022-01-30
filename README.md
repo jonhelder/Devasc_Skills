@@ -1,4 +1,4 @@
-# Devasc_Skills
+Devasc_Skills
 Task1: GitHub
 Openen the DEVASC_LABVM, opened terminal 
 Opened Github and created new repository
@@ -20,9 +20,10 @@ Task verification: see Task2.png
 
 Task3: Docker
 Taskpreparation: Run only the DEVASC-LABVM, create the Task3 directory.
-Task implemenation: created the hosts, ansible.cfg and Dockerfile.
-                    created the Create_Docker_Image.yaml                    
-Task trouble: At start I didnt unsderstoot I had the creat the dockerfile instead od creating it on the run
+Task implemenation: created  Create_Apache_Docker.sh                    
+Task trouble: At start I didnt unsderstoot I had the creat the dockerfile instead od creating it on the run . Staring apachr form Docker is not just start
 names of docker images cann't be any capital letter.
 TaskVerivcation: se Task3/pgn. before the paybook, there is no Sampleimage image and afthe the playbook there is.
+
+
 
