@@ -26,4 +26,13 @@ names of docker images cann't be any capital letter.
 TaskVerivcation: se Task3/pgn. before the paybook, there is no Sampleimage image and afthe the playbook there is.
 
 
-
+Task4: Jenkins
+Taskpreparation: 
+	Do a final git push
+	Start the Jenkings container
+	Web brows to localhost:8080 and login to Jenkins
+	Create a Job: item name build apache container
+        GIt: Rpository URL: https://github.com/jonhelder/Devasc_Skills.git
+	Credentials: jonhelder/github-token
+	Branch Specifier: */main
+	Execure shell command: bash ./Task3/Create-Apache-Container.sh 

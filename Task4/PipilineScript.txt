@@ -1,0 +1,8 @@
+node {
+    stage('Build') {
+        build 'BuildApacheContainer'
+    }
+    stage('Results') {
+        build 'TestApacheContainer'
+    }
+}
