@@ -36,3 +36,35 @@ Taskpreparation:
 	Credentials: jonhelder/github-token
 	Branch Specifier: */main
 	Execure shell command: bash ./Task3/Create-Apache-Container.sh 
+Task implementation:
+BuildApacheContainer
+Before installing the apache container the script first deletes the 
+apache-container and the apache-image. It then creates them again.
+Second the script creates the Dockerfile which will be used to create 
+the apache-images file. then  the contaier will be created.
+TestApacheContainer
+If the container is working a succesfull HTPP request can be made.
+Task trouble shooting: It took a long time it worked. After deleting all the 
+files an recreating it worked.
+
+Task5: RestAPI
+TaskPreperation: Start  the DEVASC-VM and the CSR1000v-VM
+Task implementation:
+Opened a terminal and tried the curl examples which worked. (with another 
+IP-address). I googled to find some exaples using Python.
+I used OPTIONS POST AND get
+Task troubleshooting
+The  desired response to be found in the header. 
+Also the JSON resonse come with a single quote wheras true JSON requires double qoutes!
+Task verification: see screenshot in Webex Teams space the netconfPOST.py gives an HTTP reponse of 409. This is because the "severity":"alerts" was already created.
+
+Task6: Webex Teams API
+TaskPreperation: For this task only the DEVASC-VM must be started. check Internet connectivity to ping 8.8.8.8
+Login in Webex for Developers at https://developer.webex.com to obtain the access token to be used in the script.
+Task Implementation: create the scripts using the "Lab - Construct a Python Script to Manage Webex TEams"
+- createWebexRoom.py  creates the space in Webex
+- addMemberToRoom.py adds Yvan to the Webex-Space
+- sendMessageToRoom.py send a message to the WebexSpace
+Opened Webex to see if completed 
+Task Trouble shooting: The Webex Token is only 12 hours valid, 
+Task verification: see schreenshop in Webex TeamsSpace.
